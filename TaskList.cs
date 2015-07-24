@@ -50,7 +50,7 @@ namespace todotxtlib.net
 
 		public IEnumerable<String> ToOutput()
 		{
-			return this.Select(x => x.ToString());
+			return this.Select(x => x.ToString()).ToArray();
 		}
 
 		public IEnumerable<String> ToNumberedOutput()
@@ -60,7 +60,7 @@ namespace todotxtlib.net
 				_numberFormat = new String('0', Count.ToString().Length);
 			}
 
-			return this.Select(x => x.ToString(_numberFormat));
+			return this.Select(x => x.ToString(_numberFormat)).ToArray();
 		}
 
 		public TaskList ListCompleted()
